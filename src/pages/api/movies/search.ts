@@ -1,5 +1,6 @@
 import { NextApiHandler } from "next";
 import { cache, withCache } from "src/middlewares/with-cache";
+import { withCors } from "src/middlewares/with-cors";
 import { Movies } from "src/models";
 
 const searchHandler: NextApiHandler = async ({ url, query }, res) => {
@@ -9,4 +10,4 @@ const searchHandler: NextApiHandler = async ({ url, query }, res) => {
   res.status(200).json(movies);
 };
 
-export default withCache(searchHandler);
+export default withCors(withCache(searchHandler));
