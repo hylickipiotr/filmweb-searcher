@@ -2,10 +2,10 @@ export interface Movie {
   id: number;
   release: Date;
   title: string;
+  rating: number;
+  votesCount: number;
   // originalTitle?: string;
   // poster: string;
-  // rating: number;
-  // votesCount: number;
   // director: string;
   // genres: string;
 }
